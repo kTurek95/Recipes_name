@@ -2,6 +2,20 @@ import csv
 import requests
 
 
+def main():
+    ingredients = []
+    while True:
+        user_ingredients = input('Please provide the ingredients you have (or type "end" to finish): ')
+        if user_ingredients.lower() == 'end':
+            break
+        else:
+            ingredients.append(user_ingredients)
+
+    get_ingredients_from_user_and_save_in_file(ingredients)
+    get_recipes(ingredients)
+    save_recipes_name_to_file(get_recipes(ingredients))
+
+
 def get_ingredients_from_user_and_save_in_file(ingredients: list):
     """A function that takes input from the user, collects ingredients, and saves them in a CSV file"""
     columns = ['ingredient', 'quantity']
@@ -21,7 +35,7 @@ def get_ingredients_from_user_and_save_in_file(ingredients: list):
             writer.writerow({'ingredient': ingredient, 'quantity': quantity})
 
 
-def save_recipes_name_to_file(meals: str):
+def save_recipes_name_to_file(meals: list):
     """A function that opens a text file and writes meal names in it"""
     with open('recipes name.txt', mode='w') as file:
         for meal in meals:
