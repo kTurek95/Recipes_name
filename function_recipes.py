@@ -3,6 +3,10 @@ import requests
 
 
 def main():
+    """
+    Main function that takes ingredients from the user, until they write 'end', calling the remaining functions
+    contained within the program.
+    """
     ingredients = []
     while True:
         user_ingredients = input('Please provide the ingredients you have (or type "end" to finish): ')
