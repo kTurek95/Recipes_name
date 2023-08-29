@@ -1,25 +1,7 @@
+""" Module with functions to run main module """
+
 import csv
 import requests
-
-
-def main():
-    """
-    Main function that takes ingredients from the user, until they write 'end',
-    calling the remaining functions
-    contained within the program.
-    """
-    ingredients = []
-    while True:
-        user_ingredients = \
-            input('Please provide the ingredients you have (or type "end" to finish): ')
-        if user_ingredients.lower() == 'end':
-            break
-        else:
-            ingredients.append(user_ingredients)
-
-    get_ingredients_from_user_and_save_in_file(ingredients)
-    get_recipes(ingredients)
-    save_recipes_name_to_file(get_recipes(ingredients))
 
 
 def get_ingredients_from_user_and_save_in_file(ingredients: list):
