@@ -1,8 +1,7 @@
 """ Module with tests for function recipes module """
 
-
-from function_recipes import save_recipes_name_to_file, get_ingredients_from_user_and_save_in_file
 import os
+from recipes import save_recipes_name_to_file, get_ingredients_from_user_and_save_in_file
 
 
 def test_save_recipes_name_to_file():
