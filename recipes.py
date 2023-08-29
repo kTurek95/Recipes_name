@@ -4,12 +4,14 @@ import requests
 
 def main():
     """
-    Main function that takes ingredients from the user, until they write 'end', calling the remaining functions
+    Main function that takes ingredients from the user, until they write 'end',
+    calling the remaining functions
     contained within the program.
     """
     ingredients = []
     while True:
-        user_ingredients = input('Please provide the ingredients you have (or type "end" to finish): ')
+        user_ingredients = \
+            input('Please provide the ingredients you have (or type "end" to finish): ')
         if user_ingredients.lower() == 'end':
             break
         else:
@@ -21,7 +23,8 @@ def main():
 
 
 def get_ingredients_from_user_and_save_in_file(ingredients: list):
-    """A function that takes input from the user, collects ingredients, and saves them in a CSV file"""
+    """A function that takes input from the user, collects ingredients,
+     and saves them in a CSV file"""
     columns = ['ingredient', 'quantity']
 
     my_dict = {}
@@ -48,7 +51,8 @@ def save_recipes_name_to_file(meals: list):
 
 
 def get_recipes(ingredients: list):
-    """A function that connects to an API, checks if there are any recipes in the database that match the ingredients"""
+    """A function that connects to an API,
+     checks if there are any recipes in the database that match the ingredients"""
     # Create the API request parameters required in Spoonacular
     params = {
         'ingredients': ','.join(ingredients),
